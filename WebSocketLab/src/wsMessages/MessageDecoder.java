@@ -20,6 +20,9 @@ public class MessageDecoder implements Decoder.Text<Message> {
 		} else if (jsonObject.getString("type").equals("prod")) {
 			ProdMessage message = new ProdMessage(jsonObject.getString("ID"));
 			return message;
+		} else if (jsonObject.getString("type").equals("pickle")) {
+			PickleMessage message = new PickleMessage(jsonObject.getString("ID"));
+			return message;
 		} else throw new DecodeException(msg,"Neither poke nor prod.");
 
 	}

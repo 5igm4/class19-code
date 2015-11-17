@@ -84,20 +84,22 @@ public class PokeGUI {
 		JLabel idLabel = new JLabel("Your id:");
 		JTextField idField = new JTextField(String.valueOf(Math.round(Math
 				.random() * 100000)), 10);
-		idField.setEditable(true);
+		idField.setEditable(false);
 
 		JButton pokeButton = new JButton("Poke");
 		JButton prodButton = new JButton("Prod");
+		JButton pickleButton = new JButton("Pickle");
 
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.add(idLabel);
 		buttonPanel.add(idField);
 		buttonPanel.add(pokeButton);
 		buttonPanel.add(prodButton);
+		buttonPanel.add(pickleButton);
 
 		frame.add(buttonPanel, BorderLayout.NORTH);
 
-		messageArea = new MessagePanel(session, idField, pokeButton, prodButton);
+		messageArea = new MessagePanel(session, idField, pokeButton, prodButton, pickleButton);
 
 		frame.add(messageArea, BorderLayout.WEST);
 
