@@ -102,5 +102,10 @@ public class MessagePanel extends JPanel implements ActionListener {
 		messageArea.append(prodMsg.getID() + " prodded.\n");
 		
 	}
+	
+	public void receivePickle(PickleMessage pickleMsg) {
+		messageArea.append(pickleMsg.getID() + "...pickled.\n");
+		
+	}
 
 }

@@ -16,7 +16,7 @@ import javax.websocket.server.ServerEndpoint;
  */
  
 @ServerEndpoint(value = "/poke",decoders = { MessageDecoder.class }, encoders = {
-		PokeMessageEncoder.class, ProdMessageEncoder.class })
+		PokeMessageEncoder.class, ProdMessageEncoder.class, PickleMessageEncoder.class })
 public class PokeServerEndpoint {
  
     private Logger logger = Logger.getLogger(this.getClass().getName());

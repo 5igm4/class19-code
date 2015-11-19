@@ -27,7 +27,7 @@ import wsMessages.*;
  */
 
 @ClientEndpoint(decoders = { MessageDecoder.class }, encoders = {
-		PokeMessageEncoder.class, ProdMessageEncoder.class })
+		PokeMessageEncoder.class, ProdMessageEncoder.class, PickleMessageEncoder.class })
 public class PokeGUI {
 	private static CountDownLatch latch;
 	private Logger logger = Logger.getLogger(this.getClass().getName());
@@ -51,6 +51,9 @@ public class PokeGUI {
 			messageArea.receivePoke((PokeMessage) message);
 		} else if (message instanceof ProdMessage) {
 			messageArea.receiveProd((ProdMessage) message);
+		}
+		else if (message instanceof PickleMessage){
+			messageArea.receivePickle((PickleMessage) message);
 		}
 	}
 
